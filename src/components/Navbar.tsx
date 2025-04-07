@@ -27,7 +27,9 @@ export const Navbar = () => {
           </nav>
           
           <div className="hidden md:block">
-            <Button as={Link} to="/contact">Get in Touch</Button>
+            <Link to="/contact">
+              <Button>Get in Touch</Button>
+            </Link>
           </div>
           
           {/* Mobile Menu Toggle */}
@@ -46,7 +48,9 @@ export const Navbar = () => {
             <Link to="/portfolio" className="text-gray-700 hover:text-blue-600 transition">Portfolio</Link>
             <Link to="/team" className="text-gray-700 hover:text-blue-600 transition">Team</Link>
             <Link to="/blog" className="text-gray-700 hover:text-blue-600 transition">Blog</Link>
-            <Button as={Link} to="/contact" className="w-full">Get in Touch</Button>
+            <Link to="/contact" className="w-full">
+              <Button className="w-full">Get in Touch</Button>
+            </Link>
           </div>
         </div>
       )}
