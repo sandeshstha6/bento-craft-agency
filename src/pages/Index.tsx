@@ -1,7 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { ArrowRight, ChevronDown, Star, Zap, Shield } from "lucide-react";
+import { ArrowRight, ChevronDown, Star, Zap, Shield, Check, Users, Trophy, Sparkles } from "lucide-react";
 import { CompanyServices } from "@/components/CompanyServices";
 import { FeaturedWork } from "@/components/FeaturedWork";
 import { ProjectShowcase } from "@/components/ProjectShowcase";
@@ -20,7 +20,7 @@ const Index = () => {
             </div>
             
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-8">
-              Crafting <span className="gradient-text">digital experiences</span> that inspire and engage
+              Crafting <span className="text-primary">digital experiences</span> that inspire and engage
             </h1>
             
             <p className="text-foreground/70 text-xl max-w-2xl mb-10">
@@ -34,7 +34,7 @@ const Index = () => {
                   Get Started <ArrowRight className="ml-2 h-5 w-5" />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" className="text-lg font-medium px-8">
+              <Button variant="outline" size="lg" className="text-lg font-medium px-8 border-white/20 hover:bg-white/5">
                 <Link to="/portfolio">View Our Work</Link>
               </Button>
             </div>
@@ -60,8 +60,51 @@ const Index = () => {
         </div>
       </section>
       
+      {/* What We Offer Section */}
+      <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-4">
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">What We Do</h2>
+            <p className="text-lg text-foreground/70">
+              Our comprehensive suite of services is designed to elevate your digital presence and drive real business growth.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: <Users className="h-10 w-10 text-primary" />,
+                title: "Digital Strategy",
+                description: "We develop comprehensive strategies that align with your business goals and target audience needs."
+              },
+              {
+                icon: <Sparkles className="h-10 w-10 text-primary" />,
+                title: "UI/UX Design",
+                description: "Our designers create intuitive, engaging interfaces that delight users and increase conversions."
+              },
+              {
+                icon: <Zap className="h-10 w-10 text-primary" />,
+                title: "Development",
+                description: "We build robust, scalable applications using cutting-edge technologies and best practices."
+              }
+            ].map((service, index) => (
+              <div key={index} className="bg-muted p-8 rounded-xl border border-white/5 hover:border-primary/20 transition-all hover:translate-y-[-5px]">
+                <div className="p-4 bg-primary/10 rounded-xl inline-block mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
+                <p className="text-foreground/70 mb-6">{service.description}</p>
+                <Link to="/services" className="text-primary hover:text-primary/80 inline-flex items-center group">
+                  Learn More <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      
       {/* Stats Section */}
-      <section className="py-16 bg-secondary">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
@@ -69,12 +112,12 @@ const Index = () => {
               { value: "200+", label: "Projects Completed", icon: <Zap className="h-6 w-6 text-primary" /> },
               { value: "50+", label: "Happy Clients", icon: <Star className="h-6 w-6 text-primary" /> }
             ].map((stat, index) => (
-              <div key={index} className="flex items-center p-6 bg-muted rounded-lg">
-                <div className="mr-4 p-3 bg-primary/10 rounded-full">
+              <div key={index} className="flex items-center p-8 bg-muted rounded-xl border border-white/5 hover:border-primary/20 transition-all">
+                <div className="mr-6 p-4 bg-primary/10 rounded-xl">
                   {stat.icon}
                 </div>
                 <div>
-                  <div className="text-3xl font-bold">{stat.value}</div>
+                  <div className="text-4xl font-bold">{stat.value}</div>
                   <div className="text-foreground/60">{stat.label}</div>
                 </div>
               </div>
@@ -83,54 +126,53 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Our Vision */}
-      <section className="py-24">
+      {/* Our Approach */}
+      <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="section-heading">Our Vision</h2>
-              <p className="text-3xl md:text-4xl font-bold leading-tight max-w-xl mb-8">
-                We create digital experiences that delight users and drive business growth
-              </p>
-              
-              <p className="text-foreground/70 mb-6">
-                Our collaborative approach combines strategic thinking, creative innovation, 
-                and technical expertise to deliver solutions that stand out and make an impact.
-              </p>
-              
-              <ul className="space-y-4 mb-8">
-                {[
-                  "User-centered design that puts people first",
-                  "Strategic approach aligned with business goals",
-                  "Technical excellence and attention to detail"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-center">
-                    <div className="h-2 w-2 bg-primary rounded-full mr-3"></div>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link to="/about" className="text-primary hover:underline inline-flex items-center group">
-                Learn More About Us 
-                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </Link>
-            </div>
-            
-            <div className="relative">
-              <div className="absolute -top-8 -left-8 w-64 h-64 bg-primary/10 rounded-full -z-10"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" 
-                alt="Creative team working together" 
-                className="rounded-xl shadow-xl w-full"
-              />
-            </div>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Approach</h2>
+            <p className="text-lg text-foreground/70">
+              We follow a structured methodology that ensures exceptional results for every project.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            {[
+              {
+                number: "01",
+                title: "Discovery",
+                description: "We immerse ourselves in your business to understand your goals, audience, and challenges."
+              },
+              {
+                number: "02",
+                title: "Strategy",
+                description: "We develop a comprehensive plan that aligns with your objectives and leverages our expertise."
+              },
+              {
+                number: "03",
+                title: "Creation",
+                description: "Our team brings your vision to life through meticulous design and development."
+              },
+              {
+                number: "04",
+                title: "Optimization",
+                description: "We continuously refine and improve to ensure exceptional performance and results."
+              }
+            ].map((step, index) => (
+              <div key={index} className="bg-muted p-8 rounded-xl border border-white/5 hover:border-primary/20 transition-all relative">
+                <div className="text-6xl font-extrabold text-primary/20 mb-4">{step.number}</div>
+                <h3 className="text-2xl font-bold mb-3">{step.title}</h3>
+                <p className="text-foreground/70">{step.description}</p>
+                {index < 3 && (
+                  <div className="hidden md:block absolute top-1/2 -right-4 z-10">
+                    <ArrowRight className="text-primary/40" />
+                  </div>
+                )}
+              </div>
+            ))}
           </div>
         </div>
       </section>
-      
-      {/* Services Section */}
-      <CompanyServices />
       
       {/* Featured Work Section */}
       <FeaturedWork />
@@ -141,32 +183,37 @@ const Index = () => {
       {/* Why Choose Us */}
       <section className="py-24">
         <div className="container mx-auto px-4">
-          <h2 className="section-heading mb-16">Why Choose Prospire</h2>
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Us</h2>
+            <p className="text-lg text-foreground/70">
+              We're not just another agency. We're your strategic partner committed to your success.
+            </p>
+          </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                icon: <Star className="h-8 w-8 text-primary" />,
+                icon: <Trophy className="h-10 w-10 text-primary" />,
                 title: "Industry Expertise",
                 description: "Our team brings years of experience across various industries, ensuring solutions tailored to your specific needs."
               },
               {
-                icon: <Zap className="h-8 w-8 text-primary" />,
+                icon: <Zap className="h-10 w-10 text-primary" />,
                 title: "Cutting-edge Technology",
                 description: "We stay at the forefront of technological advances to deliver innovative solutions that keep you ahead of the competition."
               },
               {
-                icon: <Shield className="h-8 w-8 text-primary" />,
+                icon: <Shield className="h-10 w-10 text-primary" />,
                 title: "Dedicated Support",
                 description: "Our commitment doesn't end at launch. We provide ongoing support to ensure your continued success."
               }
             ].map((feature, index) => (
-              <div key={index} className="p-8 bg-muted rounded-lg transition-transform hover:scale-105">
-                <div className="p-4 bg-primary/10 rounded-lg inline-block mb-6">
+              <div key={index} className="p-8 bg-muted rounded-xl border border-white/5 hover:border-primary/20 transition-all hover:translate-y-[-5px]">
+                <div className="p-4 bg-primary/10 rounded-xl inline-block mb-6">
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold mb-4">{feature.title}</h3>
-                <p className="text-foreground/60">{feature.description}</p>
+                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                <p className="text-foreground/70">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -177,22 +224,22 @@ const Index = () => {
       <TeamTestimonials />
       
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-b from-background to-secondary relative overflow-hidden">
+      <section className="py-32 bg-secondary relative overflow-hidden">
         <div className="absolute -top-10 -right-10 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
         <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-primary/10 rounded-full blur-[100px] -z-10"></div>
         
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-8 max-w-3xl mx-auto">
-            Ready to transform your <span className="gradient-text">digital presence?</span>
+            Ready to transform your <span className="text-primary">digital presence?</span>
           </h2>
           <p className="text-xl text-foreground/70 mb-12 max-w-2xl mx-auto">
             Let's collaborate and create something extraordinary together. Your vision, our expertise.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button size="lg" className="text-lg px-8">
+            <Button size="lg" className="text-lg px-8 bg-primary hover:bg-primary/90">
               <Link to="/contact">Start Your Project</Link>
             </Button>
-            <Button variant="outline" size="lg" className="text-lg px-8">
+            <Button variant="outline" size="lg" className="text-lg px-8 border-white/20 hover:bg-white/5">
               <Link to="/services">Explore Services</Link>
             </Button>
           </div>
