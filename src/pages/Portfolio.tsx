@@ -57,7 +57,7 @@ const Portfolio = () => {
         <div className="container mx-auto px-4">
           <p className="text-primary mb-2 tracking-wider">Our Portfolio</p>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
-            Showcasing our <span className="gradient-text">creative</span><br/>masterpieces
+            Showcasing our <span className="text-primary">creative</span><br/>masterpieces
           </h1>
           <p className="text-foreground/60 text-lg max-w-2xl mb-10">
             Explore our collection of work across various disciplines, 

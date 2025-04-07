@@ -13,7 +13,7 @@ const Services = () => {
         <div className="container mx-auto px-4">
           <p className="text-primary mb-2 tracking-wider">Our Services</p>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
-            Exceptional <span className="gradient-text">digital</span> services<br/>for extraordinary results
+            Exceptional <span className="text-primary">digital</span> services<br/>for extraordinary results
           </h1>
           <p className="text-foreground/60 text-lg max-w-2xl mb-10">
             We combine strategic thinking, creative innovation, and technical expertise

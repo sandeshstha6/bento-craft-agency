@@ -48,7 +48,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <p className="text-primary mb-2 tracking-wider">Get In Touch</p>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
-            Let's start a <span className="gradient-text">conversation</span>
+            Let's start a <span className="text-primary">conversation</span>
           </h1>
           <p className="text-foreground/60 text-lg max-w-2xl mb-10">
             Have a project in mind or want to learn more about our services? 

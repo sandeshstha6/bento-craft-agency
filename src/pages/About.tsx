@@ -12,7 +12,7 @@ const About = () => {
         <div className="container mx-auto px-4">
           <p className="text-primary mb-2 tracking-wider">About Prospire</p>
           <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-8">
-            We turn <span className="gradient-text">creative ideas</span><br />into reality
+            We turn <span className="text-primary">creative ideas</span><br />into reality
           </h1>
           <p className="text-foreground/60 text-lg max-w-2xl mb-10">
             Founded with a passion for exceptional design and digital innovation, 
